@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "x509-provisioning-lab"
+version = "0.1.0"
+description = "Local X.509 test certificate issuer, CSR signer, and provisioning simulator"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Contributors"}]
+keywords = ["x509", "pki", "certificate", "csr", "provisioning", "test-ca"]
+dependencies = ["cryptography==46.0.4"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.13",
+  "Operating System :: OS Independent",
+  "Topic :: Security :: Cryptography",
+]
+
+[project.scripts]
+x509-provisioning-lab = "x509_provisioning_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
